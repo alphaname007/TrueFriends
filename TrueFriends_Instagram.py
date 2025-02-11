@@ -55,7 +55,7 @@ if uploaded_followers_file is not None and uploaded_following_file is not None:
     df_output = df_combined[(df_combined['follows_me'] == follows_me) & (df_combined['i_follow'] == i_follow)]
 
     # Keep only relevant columns
-    df_output = df_combined[['name']]
+    df_output = df_output[['name']]
 
     # Display results with images
     st.header(f"Filtered Friends List - {len(df_output)}")
