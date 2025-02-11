@@ -61,14 +61,14 @@ if uploaded_file is not None:
     df_output = df_combined[['avatar_url', 'display', 'name']]
 
     # Display results with images
-    st.header("Filtered Friends List")
+    st.header(f"Filtered Friends List - {len(df_output)}")
     if not df_output.empty:
         st.data_editor(
             df_output,
             column_config={
                 "avatar_url": st.column_config.ImageColumn("Preview Image")
             },
-            hide_index=True,
+            hide_index=False,
             use_container_width=True
         )
     else:
